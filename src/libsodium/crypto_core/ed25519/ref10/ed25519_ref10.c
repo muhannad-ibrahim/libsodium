@@ -2080,7 +2080,7 @@ sc25519_muladd(unsigned char s[32], const unsigned char a[32],
     s[4]  = s1 >> 11;
     s[5]  = (s1 >> 19) | (s2 * ((uint64_t) 1 << 2));
     s[6]  = s2 >> 6;
-    s[7]  = (s2 >> 14) | (s3 * ((uint64_t) 1 << 7));
+    s[7]  = (s2 >> 14) | ((uint64_t)(s3 * ((uint64_t) 1 << 7)));
     s[8]  = s3 >> 1;
     s[9]  = s3 >> 9;
     s[10] = (s3 >> 17) | (s4 * ((uint64_t) 1 << 4));
